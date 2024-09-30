@@ -1,0 +1,71 @@
+<!-- order page for the restaurant application - restaurant/templates/restaurant/order.html-->
+
+
+{% extends 'restaurant/base.html' %}
+
+{% block content %}
+
+<body>
+
+    <h1>ORDER PAGE: </h1>
+
+    <p><strong>Today's Special: </strong><br>
+    {{special_item}}</p>
+    <img id="profile-photo" src="{{special_item_image}}" alt="Today's Special Item">
+
+    <h2>ORDER INFORMATION:</h2>
+
+    <form action="{% url 'submit' %}" method="POST">
+        {% csrf_token %}
+        Name: <input type="text" name="name"> <br>
+        Phnoe Number: <input type="text" name="phone"> <br>
+        Takeout or Dine in: <select name="dining_choice">
+            <option value="Dine-In">Dine In</option>
+            <option value="Takeout">Take Out</option>
+        </select>
+        
+        <h2>Select each item that you would like to add to your cart - press submit when you are ready to place your order.</h2>
+        <h4>All items come in family size.</h4>
+        <table>
+            <tr>
+            <td>Entree Dishes:</td>
+                <td id="buttontd"> <input type="checkbox" name="food" value="12.99" itemname="Rosemary Herb Roasted Chicken">Rosemary Herb Roasted Chicken ($12.99)<br>
+                    <input type="hidden" name="itemname" value="Rosemary Herb Roasted Chicken">
+                    <input type="checkbox" name="food" value="14.99" itemname="Chicken Gizzard with Potatoes">Chicken Gizzard with Potatoes ($14.99)<br>
+                    <input type="hidden" name="itemname" value="Chicken Gizzard with Potatoes">
+                    <input type="checkbox" name="food" value="20.99" itemname="Tutu de Feijão">Tutu de Feijão ($20.99)<br>
+                    <input type="hidden" name="itemname" value="Tutu de Feijão">
+                    <input type="checkbox" name="food" value="13.99" itemname="Sautéed Adobo Chicken">Sautéed Adobo Chicken ($13.99)<br>
+                    <input type="hidden" name="itemname" value="Sautéed Adobo Chicken">
+                    <input type="checkbox" name="food" value="21.99" itemname="Fried Fish">Fried Fish (Halibut) ($21.99)<br>
+                    <input type="hidden" name="itemname" value="Fried Fish">
+                    <input type="checkbox" name="food" value="18.99" itemname="Meatballs">Meatballs (Beef) ($18.99)<br>
+                    <input type="hidden" name="itemname" value="Meatballs">
+                    <input type="checkbox" name="food" value="26.99" itemname="Feijoada">Feijoada ($26.99)<br>
+                    <input type="hidden" name="itemname" value="Feijoada">
+                    <input type="checkbox" name="food" value="24.99" itemname="Adobe Roasted Steak">Adobe Roasted Steak ($24.99)<br>
+                    <input type="hidden" name="itemname" value="Adobe Roasted Steak">
+                </td>
+                <td>Sides Dishes:</td>
+                <td id="buttontd"> <input type="checkbox" name="food" value="7.99" itemname="Rice & Pinto Beans">Rice & Pinto Beans ($7.99)<br>
+                    <input type="checkbox" name="food" value="6.99" itemname="French Fries">French Fries ($6.99)<br>
+                    <input type="checkbox" name="food" value="8.99" itemname="Yucca">Yucca ($8.99)<br>
+                    <input type="checkbox" name="food" value="9.99" itemname="Bean Sauce">Bean Sauce ($9.99)<br>
+                    <input type="checkbox" name="food" value="4.99" itemname="Smothered Vegetables">Smothered Vegetables ($4.99)<br>
+                    <input type="checkbox" name="food" value="11.99" itemname="Pasta Salad">Pasta Salad ($11.99)<br>
+                    <input type="checkbox" name="food" value="5.99" itemname="Plantains">Plantains ($5.99)<br>
+                </td>
+                <td></td>
+                <td id="buttontd">Daily Special: <select name="food">
+                    <option value="31.99" name="food">{{special_item}} ($31.99)</option>
+                    <option value="0.00">No {{special_item}}</option>
+                </td>
+            </tr>
+        </table>
+
+        <input type="submit">
+    </form>
+    
+</body>
+
+{% endblock %}

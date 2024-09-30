@@ -1,0 +1,25 @@
+<!-- confirmation page for the restaurant application - restaurant/templates/restaurant/confirmation.html-->
+
+
+{% extends 'restaurant/base.html' %}
+
+{% block content %}
+
+<body>
+    <h1>Hello, {{name}}! Thank you for your {{meal_type}} purchase!</h1> <hr>
+
+    <h3>Order Receipt:</h3> <br>
+
+
+    <strong>Price of items: </strong> {{final_price}}$ <br>
+    <strong>Tax: </strong> {{tax}}$ <br>
+    <strong>Total Cost:  </strong>{{taxed_price}}$ <br>
+
+    Your order is expected to be ready by: <br>
+    <h2>{{format_time}}</h2> <br>
+
+    We will contact you at {{phone}} when your order is ready. Thank you again, {{name}}!
+
+</body>
+
+{% endblock %}

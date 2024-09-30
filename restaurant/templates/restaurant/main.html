@@ -1,0 +1,57 @@
+<!-- main home page for the restaurant application - restaurant/templates/restaurant/main.html-->
+
+{% extends 'restaurant/base.html' %}
+
+{% block content %}
+
+<body>
+    <h2>Welcome to Mina's! Home of the best Authentic Brazilian food in town.</h2>
+
+    <img id="profile-photo" src="https://s3-media0.fl.yelpcdn.com/bphoto/WfdCLXGrYBT0svGMTomwpg/348s.jpg" alt="Mina's Cafe Exterior">
+    <img id="profile-photo" src="https://media-cdn.tripadvisor.com/media/photo-p/11/b7/ea/c0/photo1jpg.jpg" alt="Mina's Cafe Interior">
+    <img id="profile-photo" src="https://s3-media0.fl.yelpcdn.com/bphoto/H7UI5lSoyOkYT-5gt0WAag/348s.jpg" alt="Mina's Cafe Food">
+
+    <p><strong>Street Address: </strong> 1241 Washington St, Norwood, MA 02062</p>
+    <p><strong>Phone Number: </strong> 781-<strong>MINAS-CAFE</strong></p>
+
+    <table border="1">
+        <caption><strong>HOURS OF OPERATION</strong></caption>
+        <tr>
+            <th>Day</th>
+            <th>Hours</th>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>12 PM - 9 PM</td>
+        </tr>
+        <tr>
+            <td>Tuesday</td>
+            <td>12 PM - 9 PM</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>12 PM - 9 PM</td>
+        </tr>
+        <tr>
+            <td>Thursday</td>
+            <td>12 PM - 9 PM</td>
+        </tr>
+        <tr>
+            <td>Friday</td>
+            <td>12 PM - 9 PM</td>
+        </tr>
+        <tr>
+            <td>Saturday</td>
+            <td>1 PM - 6 PM</td>
+        </tr>
+        <tr>
+            <td>Sunday</td>
+            <td>Closed</td>
+        </tr>
+    </table> <br>
+    
+
+    <li>Interested in trying one of our dishes? <a href="{% url 'order' %}"><strong>ORDER HERE</strong></a></li>
+</body>
+
+{% endblock %}
